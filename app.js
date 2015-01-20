@@ -1,7 +1,8 @@
 var express = require('express');
 var path = require('path');
 
-var MongoStore = require('connect-mongo')(express);
+var session = require('express-session')
+var MongoStore = require('connect-mongo')(session);
 var settings = require('settings');
 
 var favicon = require('serve-favicon');
@@ -24,8 +25,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.session({
+app.use(session({
     secret:settings.cookieSecret,
+    resave:false,
     key:setting.db,
     cookie:{maxAge:1000*60*60*24*30},
     store:new MongoStore({
