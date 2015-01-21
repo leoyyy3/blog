@@ -14,6 +14,7 @@
     "debug": "~2.0.0",
     "mongodb": ">=0.9.9",
     "connect-mongo":"*",
+    "connect-flash":"*",
     "ejs": "~0.8.5"
   }
 }

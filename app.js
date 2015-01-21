@@ -3,7 +3,9 @@ var path = require('path');
 
 var session = require('express-session')
 var MongoStore = require('connect-mongo')(session);
-var settings = require('settings');
+var settings = require('./settings');
+
+var flash = require("connect-flash");
 
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -19,6 +21,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(flash());
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
@@ -27,8 +31,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
     secret:settings.cookieSecret,
-    resave:false,
-    key:setting.db,
+   // resave:false,
+    key:settings.db,
     cookie:{maxAge:1000*60*60*24*30},
     store:new MongoStore({
         db:settings.db

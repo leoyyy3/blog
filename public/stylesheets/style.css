@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+*{margin:0;padding:0}
 a {
   color: #00B7FF;
 }
+
+header{margin-left:100px;line-height: 60px;border-bottom: 1px solid #ccc;}
+nav{position:fixed;height:36px;line-height:36px;width:100px;top:50px;left:0;}
+nav span{display: inline-block;width:100%;text-align:center;line-height: 36px}
+nav span a{display: block;}
+article{margin-left:100px;padding:10px;}
+
+/*login*/
+.login_form p{height:36px;line-height: 36px;}
+.login_form p input{border:1px solid #efefef;height:24px;line-height:24px;padding:0 5px;width:150px;outline: none}
+.sub_btn{width:80px;text-align:center;height:24px;line-height:24px;background:#efefef;border:none;border-radius:5px;}
+.login_form p label{min-width: 80px;display: inline-block;}
