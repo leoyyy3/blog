@@ -86,7 +86,7 @@ router.post('/login', function(req, res) {
   	}
   	req.session.user = user;
   	req.flash('success','登录成功');
-  	req.redirect('/');
+  	res.redirect('/');
   })
 });
 

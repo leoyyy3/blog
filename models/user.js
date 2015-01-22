@@ -36,14 +36,14 @@ User.find = function(name,callback){
 		if(err){
 			return callback(err);
 		}
-		db.collection('users',function(err,collection){
+		db.collection('user',function(err,collection){
 			if(err){
 				mongodb.close();
 				return callback(err);
 			}
 			collection.findOne({name:name},function(err,user){
 				mongodb.close();
-				if(err){
+				if(user){
 					return callback(null,user);//成功，返回查询的用户信息
 				}
 				callback(err);
