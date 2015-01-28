@@ -15,5 +15,7 @@ article{margin-left:100px;padding:10px;}
 /*login*/
 .login_form p{height:36px;line-height: 36px;}
 .login_form p input{border:1px solid #efefef;height:24px;line-height:24px;padding:0 5px;width:150px;outline: none}
-.sub_btn{width:80px;text-align:center;height:24px;line-height:24px;background:#efefef;border:none;border-radius:5px;}
+.sub_btn{width:80px;cursor:pointer;text-align:center;height:24px;line-height:24px;background:#efefef;border:none;border-radius:5px;}
 .login_form p label{min-width: 80px;display: inline-block;}
+
+.post_form p{height:36px;line-height: 36px;}
